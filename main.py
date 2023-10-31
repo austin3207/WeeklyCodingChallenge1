@@ -1,13 +1,24 @@
 # This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
 def magic_index(arr):
     for i in range(0, len(arr)):
         if i == arr[i]:
             print("Index " + str(i) + " is a Magic number.")
             return
     print("There is no magic number.")
+
+
+# Assuming not distinct functionality means there can be multiple magic numbers
+def magic_index_not_distinct(arr):
+    magic_numbers = []
+    for i in range(0, len(arr)):
+        if i == arr[i]:
+            magic_numbers.append(i)
+    if magic_numbers is None:
+        print("There is no magic number.")
+        return
+    print("These are the indexes of the magic numbers: " + str(magic_numbers))
 
 
 def recursive_multiply(num_1, num_2):
@@ -33,10 +44,13 @@ def power_set(arr):
 
 if __name__ == '__main__':
     print("Weekly Coding Challenge")
-    print("Find Magic Number")
-    array = [1, 0, 2]
+    print("Find a Magic Number")
+    array = [1, 0, 2, 3, 3]
     print(array)
     magic_index(array)
+    print()
+    print(array)
+    magic_index_not_distinct(array)
     print()
     print("Recursive Multiply")
     print(recursive_multiply(5, 6))
